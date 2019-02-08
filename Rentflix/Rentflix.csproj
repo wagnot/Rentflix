@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C89650B-E510-4F9E-A564-A2D98C8C37F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Rentflix</RootNamespace>
+    <AssemblyName>Rentflix</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Npgsql, Version=4.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.0.3\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.0\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Censura.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="ConectaDB.cs" />
+    <Compile Include="Filme.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Genero.cs" />
+    <Compile Include="JanelaCensura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaCensura.Designer.cs">
+      <DependentUpon>JanelaCensura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaCliente.Designer.cs">
+      <DependentUpon>JanelaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaFilmes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaFilmes.Designer.cs">
+      <DependentUpon>JanelaFilmes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaGenero.Designer.cs">
+      <DependentUpon>JanelaGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="List.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaCensura.resx">
+      <DependentUpon>JanelaCensura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaCliente.resx">
+      <DependentUpon>JanelaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaFilmes.resx">
+      <DependentUpon>JanelaFilmes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaGenero.resx">
+      <DependentUpon>JanelaGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\video-document-add-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\handshake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\AddTel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Novo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\CancelarFal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\EditarFal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\ExcluirFal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\MenuCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\MenuFilme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\MenuLocacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\NovoFal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\SalvarFal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+    <Folder Include="NewFolder2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\erro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Okay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\Rentflix.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\Cliente.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\Filmes.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\Locacao.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\Nome.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\CPF.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\rg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\sexo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\dataNascimento.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\cep.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\Telefone.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\logradouro.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\estado.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\bairro.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\cidade.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\CamposObr.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\apenas18.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\generos.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\descricao.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\titulo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\generoFilme.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\censura.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\dist.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\preco.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\multa.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\atores.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\dataLancamento.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\Img.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\imgNaoEnc.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Img\Palavras\addImg.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
